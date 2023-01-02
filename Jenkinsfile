@@ -17,6 +17,11 @@ pipeline {
                 sh 'node --version'
             }
         }
+        stage('main') {
+            steps {
+                sh 'node --version'
+            }
+        }
     }
     post {
         success {
