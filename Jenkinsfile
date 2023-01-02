@@ -19,7 +19,7 @@ pipeline {
     }
     post {
         success {
-            echo 'successful! '${URL_WEBHOOK}''
+            echo 'successful! ${URL_WEBHOOK}'
         }
     }
 }
