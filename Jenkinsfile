@@ -22,23 +22,25 @@ pipeline {
             }
         }
         stage('deploy') {
-            steps {
-                 when {
-                    anyOf {
+            when {
+                anyOf {
                         branch 'main';
-                    }
                 }
+            }
+
+            steps {
+
                 sh 'node --version'
                 echo 'hello main branch'
             }
         }
         stage('deploy') {
-            steps {
-                 when {
-                    anyOf {
+            when {
+                anyOf {
                         branch 'dev';
-                    }
                 }
+            }
+            steps {
                 sh 'node --version'
                 echo 'hello dev branch'
             }
