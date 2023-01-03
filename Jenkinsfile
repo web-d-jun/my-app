@@ -15,6 +15,8 @@ pipeline {
         stage('build') {
             steps {
                 sh 'node --version'
+                sh './build.sh'
+
             }
         }
         stage('main') {
