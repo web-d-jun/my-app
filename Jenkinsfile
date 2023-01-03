@@ -22,6 +22,11 @@ pipeline {
                 sh 'node --version'
             }
         }
+        stage('dev') {
+            steps {
+                sh 'node --version'
+            }
+        }
     }
     post {
         success {
