@@ -21,14 +21,26 @@ pipeline {
                 sh './build.sh'
             }
         }
-        stage('main') {
+        stage('deploy') {
             steps {
+                 when {
+                    anyOf {
+                        branch 'main';
+                    }
+                }
                 sh 'node --version'
+                echo 'hello main branch'
             }
         }
-        stage('dev') {
+        stage('deploy') {
             steps {
+                 when {
+                    anyOf {
+                        branch 'dev';
+                    }
+                }
                 sh 'node --version'
+                echo 'hello dev branch'
             }
         }
     }
