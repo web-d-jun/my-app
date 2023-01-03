@@ -15,7 +15,7 @@ pipeline {
         stage('build') {
             steps {
                 git branch: 'main',
-                credentialsId: 'github_access_token',
+                credentialsId: 'github_access',
                 url: 'https://github.com/web-d-jun/my-app.git'
                 sh 'node --version'
                 sh './build.sh'
