@@ -21,7 +21,7 @@ pipeline {
                 sh './build.sh'
             }
         }
-        stage('deploy') {
+        stage('main_deploy') {
             when {
                 anyOf {
                         branch 'main';
@@ -34,7 +34,7 @@ pipeline {
                 echo 'hello main branch'
             }
         }
-        stage('deploy') {
+        stage('dev_deploy') {
             when {
                 anyOf {
                         branch 'dev';
