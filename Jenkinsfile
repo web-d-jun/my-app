@@ -19,7 +19,13 @@ pipeline {
                 url: 'https://github.com/web-d-jun/my-app.git'
                 sh 'node --version'
                 sh './build.sh'
-
+            }
+            steps {
+                git branch: 'dev',
+                credentialsId: 'github_access_token',
+                url: 'https://github.com/web-d-jun/my-app.git'
+                sh 'node --version'
+                echo 'dev.......'
             }
         }
         stage('main') {
